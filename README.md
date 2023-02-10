@@ -19,6 +19,10 @@ This is a simple currency converter that converts from one currency to another
 GET /api/to-usd?amount=1000
 ```
 
+parameters:
+
+- `amount` (number) - amount of currency to convert
+
 ### response
 
 ```json
@@ -37,6 +41,10 @@ GET /api/to-usd?amount=1000
 ```http
 GET /api/to-uzs?amount=1000
 ```
+
+parameters:
+
+- `amount` (number) - amount of currency to convert
 
 ### response
 
