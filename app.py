@@ -1,8 +1,14 @@
 from flask import Flask, request
-
+import requests
 app = Flask(__name__)
 
-usd = 11380.7 # 1 USD = 11380.7 UZS
+# usd = 11380.7 # 1 USD = 11380.7 UZS
+respons=requests.get("https://nbu.uz/uz/exchange-rates/json")
+usd=float(respons.json()[-1]["cb_price"])
+@app.route("/")
+def home():
+    api= "Assalomu alaykum   'url' davomidan '/api/to-usd?amount=100' yoki '/api/to-uzs?amount=100'   kiriting  doller kursi haqida ma`lumotga ega bo`ling"
+    return api
 
 @app.route('/api/to-usd', methods=['GET'])
 def to_usd():
